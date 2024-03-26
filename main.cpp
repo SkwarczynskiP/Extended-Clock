@@ -1,6 +1,6 @@
 #include <iostream>
 #include <string>
-#include "Clock.h"
+#include "CityClock.h"
 using namespace std;
 
 int main() {
@@ -8,8 +8,8 @@ int main() {
     bool is24HourFormat, isAM;
     string yesOrNo;
 
-    cout << endl << "Default Clock:" << endl;
-    Clock defaultClock;
+    cout << endl << "Default CityClock:" << endl;
+    CityClock defaultClock;
     defaultClock.show();
     cout << "One Second Passing..." << endl;
     defaultClock.tick();
@@ -18,7 +18,7 @@ int main() {
     defaultClock.toggleFormat();
     defaultClock.show();
 
-    cout << endl << "Clock Implementation with 3 Arguments: " << endl;
+    cout << endl << "CityClock Implementation with 3 Arguments: " << endl;
     cout << "Please enter a positive integer (0 - 23 inclusive) for the hours: ";
     cin >> hours;
 
@@ -28,7 +28,7 @@ int main() {
     cout << "Please enter a positive integer (0 - 59 inclusive) for the seconds: ";
     cin >> sec;
 
-    Clock secondClock(hours, min, sec);
+    CityClock secondClock(hours, min, sec);
 
     secondClock.show();
     cout << "One Second Passing..." << endl;
@@ -38,7 +38,7 @@ int main() {
     secondClock.toggleFormat();
     secondClock.show();
 
-    cout << endl << "Clock Implementation with 5 Arguments: " << endl;
+    cout << endl << "CityClock Implementation with 5 Arguments: " << endl;
 
     do {
         cout << "Will you be using the 24-Hour Format? (y/n): ";
@@ -76,7 +76,7 @@ int main() {
     cout << "Please enter a positive integer (0 - 59 inclusive) for the seconds: ";
     cin >> sec;
 
-    Clock thirdClock(hours, min, sec, is24HourFormat, isAM);
+    CityClock thirdClock(hours, min, sec, is24HourFormat, isAM);
 
     thirdClock.show();
     cout << "One Second Passing..." << endl;

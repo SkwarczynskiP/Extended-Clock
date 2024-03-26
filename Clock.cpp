@@ -1,10 +1,10 @@
 #include <iostream>
 #include <iomanip>
-#include "Clock.h"
+#include "CityClock.h"
 using namespace std;
 
 //Default Constructor
-Clock::Clock(){
+CityClock::CityClock(){
     hours = 0;
     minutes = 0;
     seconds = 0;
@@ -13,7 +13,7 @@ Clock::Clock(){
 }
 
 //Constructor that takes three integer arguments
-Clock::Clock(int h, int m, int s){
+CityClock::CityClock(int h, int m, int s){
     is24Hour = true;
     isAM = true;
     if (h >= 0 && h <= 23 && m >= 0 && m <= 59 && s >= 0 && s <= 59) {
@@ -29,7 +29,7 @@ Clock::Clock(int h, int m, int s){
 }
 
 //Constructor that takes five arguments
-Clock::Clock(int h, int m, int s, bool format, bool am){
+CityClock::CityClock(int h, int m, int s, bool format, bool am){
     is24Hour = format;
     isAM = am;
     if (is24Hour) {
@@ -58,7 +58,7 @@ Clock::Clock(int h, int m, int s, bool format, bool am){
 }
 
 //Member function to switch the time format
-void Clock::toggleFormat() {
+void CityClock::toggleFormat() {
     if (is24Hour) {
         if (hours >= 0 && hours <= 11) {
             if (hours == 0) {
@@ -86,7 +86,7 @@ void Clock::toggleFormat() {
 }
 
 //Member function to display the time
-void Clock::show() {
+void CityClock::show() {
     cout << "The Current Time is: ";
     if (is24Hour) {
         cout << setw(2) << setfill('0') << hours << ":" << setw(2) << setfill('0') << minutes << ":" << setw(2) << setfill('0') << seconds << endl;
@@ -100,7 +100,7 @@ void Clock::show() {
 }
 
 //Member function to advance the time by one second
-void Clock::tick() {
+void CityClock::tick() {
     seconds++;
 
     if (seconds == 60) {

@@ -3,7 +3,7 @@
 
 using namespace std;
 
-class Clock{
+class CityClock{
 private:
     int hours;
     int minutes;
@@ -12,9 +12,9 @@ private:
     bool isAM;
 
 public:
-    Clock();
-    Clock(int, int, int);
-    Clock(int, int, int, bool, bool);
+    CityClock();
+    CityClock(int, int, int);
+    CityClock(int, int, int, bool, bool);
     void toggleFormat();
     void show();
     void tick();
