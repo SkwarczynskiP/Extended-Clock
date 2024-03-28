@@ -1,4 +1,4 @@
-# Extended-CityClock
+# CityClock
  
 ### Run Directions:
 Run Command
