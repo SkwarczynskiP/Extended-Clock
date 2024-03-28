@@ -55,8 +55,8 @@ build CMakeFiles/Extended_Clock.dir/main.cpp.obj: CXX_COMPILER__Extended_Clock_u
   OBJECT_DIR = CMakeFiles\Extended_Clock.dir
   OBJECT_FILE_DIR = CMakeFiles\Extended_Clock.dir
 
-build CMakeFiles/Extended_Clock.dir/Clock.cpp.obj: CXX_COMPILER__Extended_Clock_unscanned_Debug C$:/MY$ STUFF/OU$ Winter$ 2024/CSI$ 2320/Project5/Extended-Clock/Clock.cpp || cmake_object_order_depends_target_Extended_Clock
-  DEP_FILE = CMakeFiles\Extended_Clock.dir\Clock.cpp.obj.d
+build CMakeFiles/Extended_Clock.dir/CityClock.cpp.obj: CXX_COMPILER__Extended_Clock_unscanned_Debug C$:/MY$ STUFF/OU$ Winter$ 2024/CSI$ 2320/Project5/Extended-Clock/CityClock.cpp || cmake_object_order_depends_target_Extended_Clock
+  DEP_FILE = CMakeFiles\Extended_Clock.dir\CityClock.cpp.obj.d
   FLAGS = -g -std=gnu++23 -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles\Extended_Clock.dir
   OBJECT_FILE_DIR = CMakeFiles\Extended_Clock.dir
@@ -69,7 +69,7 @@ build CMakeFiles/Extended_Clock.dir/Clock.cpp.obj: CXX_COMPILER__Extended_Clock_
 #############################################
 # Link the executable Extended_Clock.exe
 
-build Extended_Clock.exe: CXX_EXECUTABLE_LINKER__Extended_Clock_Debug CMakeFiles/Extended_Clock.dir/main.cpp.obj CMakeFiles/Extended_Clock.dir/Clock.cpp.obj
+build Extended_Clock.exe: CXX_EXECUTABLE_LINKER__Extended_Clock_Debug CMakeFiles/Extended_Clock.dir/main.cpp.obj CMakeFiles/Extended_Clock.dir/CityClock.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\Extended_Clock.dir

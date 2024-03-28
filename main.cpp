@@ -1,90 +1,61 @@
-#include <iostream>
-#include <string>
 #include "CityClock.h"
+#include <iostream>
 using namespace std;
 
 int main() {
-    int hours, min, sec;
-    bool is24HourFormat, isAM;
-    string yesOrNo;
 
-    cout << endl << "Default CityClock:" << endl;
-    CityClock defaultClock;
-    defaultClock.show();
-    cout << "One Second Passing..." << endl;
-    defaultClock.tick();
-    defaultClock.show();
-    cout << "Switching Time Format..." << endl;
-    defaultClock.toggleFormat();
-    defaultClock.show();
+    cout << "CityClock Object Using Default Constructor:" << endl;
+    CityClock clock1;
+    clock1.show();
 
-    cout << endl << "CityClock Implementation with 3 Arguments: " << endl;
-    cout << "Please enter a positive integer (0 - 23 inclusive) for the hours: ";
-    cin >> hours;
+    cout << endl << "CityClock Object Using Constructor with Four Arguments:" << endl;
+    CityClock clock2("Auburn Hills, Michigan", 12, 45, 35);
+    clock2.show();
 
-    cout << "Please enter a positive integer (0 - 59 inclusive) for the minutes: ";
-    cin >> min;
+    cout << endl << "Incrementing Time by One Second:" << endl;
+    clock1.tick();
+    clock1.show();
 
-    cout << "Please enter a positive integer (0 - 59 inclusive) for the seconds: ";
-    cin >> sec;
+    clock2.tick();
+    clock2.show();
 
-    CityClock secondClock(hours, min, sec);
+    cout << endl << "Switching Time Format:" << endl;
+    clock1.toggleFormat();
+    clock1.show();
 
-    secondClock.show();
-    cout << "One Second Passing..." << endl;
-    secondClock.tick();
-    secondClock.show();
-    cout << "Switching Time Format..." << endl;
-    secondClock.toggleFormat();
-    secondClock.show();
+    clock2.toggleFormat();
+    clock2.show();
 
-    cout << endl << "CityClock Implementation with 5 Arguments: " << endl;
+    cout << endl << "Create New CityClock Object:" << endl;
+    CityClock clock3("Troy, Michigan", 6, 30, 45);
+    clock3.show();
 
-    do {
-        cout << "Will you be using the 24-Hour Format? (y/n): ";
-        cin >> yesOrNo;
-    } while (yesOrNo != "y" && yesOrNo != "n");
+    cout << endl << "Demonstrating the Overloaded Addition Operator:" << endl;
+    CityClock clock4 = clock3 + 3675; // Adding One Hour and One Minute and 15 Seconds
+    clock4.show();
 
-    if (yesOrNo == "y") {
-        is24HourFormat = true;
-    } else {
-        is24HourFormat = false;
-    }
+    cout << endl << "Demonstrating the Copy Constructor:" << endl;
+    CityClock clock5(clock4);
+    clock5.show();
 
-    do {
-        cout << "Will your time be in the AM? (y/n): ";
-        cin >> yesOrNo;
-    } while (yesOrNo != "y" && yesOrNo != "n");
+    cout << endl << "Demonstrating the Move Constructor:" << endl;
+    CityClock clock6(move(clock5));
+    clock6.show();
 
-    if (yesOrNo == "y") {
-        isAM = true;
-    } else {
-        isAM = false;
-    }
+    cout << endl << "Demonstrating the Copy Assignment Operator:" << endl;
+    CityClock clock7;
+    clock7 = clock6;
+    clock7.show();
 
-    if (is24HourFormat) {
-        cout << "Please enter a positive integer (0 - 23 inclusive) for the hours: ";
-        cin >> hours;
-    } else {
-        cout << "Please enter a positive integer (1 - 12 inclusive) for the hours: ";
-        cin >> hours;
-    }
+    cout << endl << "Demonstrating the Move Assignment Operator:" << endl;
+    CityClock clock8;
+    clock8 = move(clock7);
+    clock8.show();
 
-    cout << "Please enter a positive integer (0 - 59 inclusive) for the minutes: ";
-    cin >> min;
+    cout << endl << "Demonstrating the Type Conversion Function:" << endl;
+    string stringOne = clock8;
+    cout << stringOne << endl;
 
-    cout << "Please enter a positive integer (0 - 59 inclusive) for the seconds: ";
-    cin >> sec;
-
-    CityClock thirdClock(hours, min, sec, is24HourFormat, isAM);
-
-    thirdClock.show();
-    cout << "One Second Passing..." << endl;
-    thirdClock.tick();
-    thirdClock.show();
-    cout << "Switching Time Format..." << endl;
-    thirdClock.toggleFormat();
-    thirdClock.show();
-
+    cout << endl << "CityClock Destructor is Automatically Called for Each Object" << endl;
     return 0;
 }

@@ -1,2 +1,11 @@
 # Extended-CityClock
- CSI 2320 - C++ For Programmers - Project 5
+ 
+### Run Directions:
+Run Command
+ - make run
+
+### Delete Executables Directions:
+Run Command
+ - make clean
+
+### Sample Console Output:
