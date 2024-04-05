@@ -49,8 +49,8 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "C:/MY STUFF/OU Winter 2024/CSI 2320/Project5/Extended-Clock/cmake-build-debug",
-		"source" : "C:/MY STUFF/OU Winter 2024/CSI 2320/Project5/Extended-Clock"
+		"build" : "C:/MY STUFF/OU Winter 2024/CSI 2320/Project5/Extended-Clock-Class/cmake-build-debug",
+		"source" : "C:/MY STUFF/OU Winter 2024/CSI 2320/Project5/Extended-Clock-Class"
 	},
 	"version" : 
 	{
